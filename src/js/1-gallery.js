@@ -67,10 +67,9 @@ const images = [
 ];
 
 
-const galleryItems = images.map(
-    ({ preview, original, description }) =>
-        `<li class="gallery-item">
-    <a class="gallery-link" href="large-image.jpg">
+const galleryItems = images.map(({ preview, original, description }) => {
+    return `<li class="gallery-item">
+    <a class="gallery-link" href="${original}">
       <img
         class="gallery-image"
         src="${preview}"
@@ -78,9 +77,8 @@ const galleryItems = images.map(
         alt="${description}"
       />
     </a>
-  </li>
-  `
-);
+  </li>`;
+});
 
 const galleryList = document.querySelector('.gallery');
 
